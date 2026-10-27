@@ -43,4 +43,11 @@ Engine-op host work unmetered in WasmProcess::handle leading to
 tari-ootle. The fix was applied by the Tari team in 
 tari-ootle#2934.
 
+## Report 5 - GHSA-3rc7-6cr6-8mx8
+
+World-readable app config files allow cross-user MCP token theft,
+secret recovery, and authenticated control-plane access in
+tari-project/universe. The fix was applied by the Tari team
+(config files created 0600 instead of inheriting 0644) Fixes #338.
+
 Technical details remain in the advisory until it is published.
