@@ -8,3 +8,4 @@ A summary of contributions by @ocakciomursel-pixel in November 2026:
 - [tari-project/tari-ootle#3701](https://github.com/tari-project/tari-ootle/pull/3701): `fix(engine): enforce CallScope check in ComponentAction::GetTemplateAddress` (tracked in `tari-project/special_contributions#620`).
 - [tari-project/tari-ootle#3707](https://github.com/tari-project/tari-ootle/pull/3707): `fix(tari_bor): enforce max decode depth and sentinel map bounds in serde deserializer` (tracked in `tari-project/special_contributions#622`).
 - [tari-project/tari-ootle#3763](https://github.com/tari-project/tari-ootle/pull/3763): `fix(walletd): enforce session token, bound listen address, and peer-close cleanup in WebRTC` (tracked in `tari-project/special_contributions#646`).
+- [tari-project/tari-ootle#3702](https://github.com/tari-project/tari-ootle/pull/3702): `fix(engine): reject guest exports carrying reserved __tari_global_ prefix` (tracked in `tari-project/special_contributions#653`).
