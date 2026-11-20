@@ -16,4 +16,4 @@ A summary of security contributions by @sonson0910 in November 2026:
 * Contribution in `tari-project/tari-ootle#3614` (tracked in `tari-project/special_contributions#557`).
 * Contribution in `tari-project/tari-ootle#3633` (tracked in `tari-project/special_contributions#577`).
 * Contribution in `tari-project/tari-ootle#3827` (tracked in `tari-project/special_contributions#674`).
-* Bug report: `GHSA-wr9f-gm95-grww` (fixed in `tari-project/tari-ootle#3866`, tracked in `tari-project/special_contributions#686`). Testing was performed locally only; no shared network was touched.
+* Contribution in `tari-project/tari-ootle#3866` (tracked in `tari-project/special_contributions#686`).
