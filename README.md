@@ -1,5 +1,8 @@
 # Special Contributions
 
+> [!CAUTION]
+> **Security notice.** From 2026-10-14 to 2026-11-19, `main` contained malware that ran when the folder was opened in VS Code or Cursor. If you cloned or pulled this repository in that window and opened it in one of those editors, treat the machine as compromised. See [#687](https://github.com/tari-project/special_contributions/issues/687) for how to check and what to do.
+
 This repository rewards contributions that the normal bounty process cannot track: work that involves no code, or code that was merged somewhere the bounty scanner does not watch. Examples are vulnerability reports without a fix, community moderation, documentation, and onboarding.
 
 The full process is on the wiki: https://wiki.tari.com/processes:bounties
