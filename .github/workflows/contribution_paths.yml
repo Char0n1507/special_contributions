@@ -1,0 +1,40 @@
+---
+# Bounty claims add or edit one Markdown file under YYYY/MM/. This check fails any PR that
+# touches another path, so code, editor config or binary files cannot ride along with a claim.
+#
+# It runs on pull_request_target so the workflow comes from the base branch and a PR cannot
+# rewrite it. It never checks out or runs PR content: it reads the file list from the API
+# with a read-only token.
+name: Contribution paths
+
+'on':
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  paths:
+    name: Contribution files only
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check changed paths
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          allowed='^20[0-9]{2}/(0[1-9]|1[0-2])/[^/]+[.]md$'
+          # A rename counts against both its old and its new path.
+          bad=$(gh api --paginate "repos/$REPO/pulls/$PR/files" --jq \
+            ".[] | [.filename, (.previous_filename // empty)] | .[] | select(test(\"$allowed\") | not)")
+          if [ -n "$bad" ]; then
+            echo "::error::This PR changes files outside YYYY/MM/*.md. Contribution PRs may only add or edit their own Markdown file."
+            # Indented so a crafted file name cannot start a workflow command.
+            printf '%s\n' "$bad" | sort -u | sed 's/^/  - /'
+            exit 1
+          fi
+          echo "All changed files are contribution files."
